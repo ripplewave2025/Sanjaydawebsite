@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Sanjay Biswakarma - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark blue-gray background */
+            color: #E5E7EB; /* Light gray text */
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-accent {
+            color: #D4AF37;
+        }
+        .gold-bg {
+            background-color: #D4AF37;
+        }
+        .section {
+            padding: 4rem 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 6rem 2rem;
+            }
+        }
+        /* Simple animation for elements appearing on scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);y
+            
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="Sanjayda.jpg" alt="Sanjay Biswakarma" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gold-accent object-cover shadow-md">
+                <h1 class="text-xl md:text-2xl font-bold font-playfair tracking-wider">Sanjay Biswakarma</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-gold-accent transition duration-300 lang-en">About</a>
+                <a href="#about" class="hover:text-gold-accent transition duration-300 lang-ne hidden">मेरो बारेमा</a>
+                <a href="#services" class="hover:text-gold-accent transition duration-300 lang-en">Services</a>
+                <a href="#services" class="hover:text-gold-accent transition duration-300 lang-ne hidden">सेवाहरू</a>
+                <a href="#experience" class="hover:text-gold-accent transition duration-300 lang-en">Experience</a>
+                <a href="#experience" class="hover:text-gold-accent transition duration-300 lang-ne hidden">अनुभव</a>
+                <a href="#gallery" class="hover:text-gold-accent transition duration-300 lang-en">Gallery</a>
+                <a href="#gallery" class="hover:text-gold-accent transition duration-300 lang-ne hidden">ग्यालेरी</a>
+                <a href="#contact" class="hover:text-gold-accent transition duration-300 lang-en">Contact</a>
+                <a href="#contact" class="hover:text-gold-accent transition duration-300 lang-ne hidden">सम्पर्क</a>
+                 <!-- Language Toggle -->
+                <div id="lang-toggle" class="flex items-center space-x-2 cursor-pointer ml-4">
+                    <span class="text-sm font-bold">ENG</span>
+                    <div class="w-10 h-5 bg-gray-700 rounded-full flex items-center p-1">
+                        <div id="lang-toggle-dot" class="w-3 h-3 bg-white rounded-full transform transition-transform duration-300 translate-x-0"></div>
+                    </div>
+                    <span class="text-sm font-bold text-gray-500">नेपाली</span>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-en">About</a>
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-ne hidden">मेरो बारेमा</a>
+            <a href="#services" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-en">Services</a>
+            <a href="#services" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-ne hidden">सेवाहरू</a>
+            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-en">Experience</a>
+            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-ne hidden">अनुभव</a>
+            <a href="#gallery" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-en">Gallery</a>
+            <a href="#gallery" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-ne hidden">ग्यालेरी</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-en">Contact</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-800 lang-ne hidden">सम्पर्क</a>
+            <div class="p-4">
+                 <div id="lang-toggle-mobile" class="flex items-center space-x-2 cursor-pointer w-min mx-auto">
+                    <span class="text-sm font-bold">ENG</span>
+                    <div class="w-10 h-5 bg-gray-700 rounded-full flex items-center p-1">
+                        <div id="lang-toggle-dot-mobile" class="w-3 h-3 bg-white rounded-full transform transition-transform duration-300 translate-x-0"></div>
+                    </div>
+                    <span class="text-sm font-bold text-gray-500">नेपाली</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-cover bg-center bg-fixed" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');">
+            <div class="container mx-auto text-center px-6">
+                <img src="Sanjayda.jpg" alt="Chef Sanjay Biswakarma" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-gold-accent shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <h2 class="text-5xl md:text-7xl lg:text-8xl font-black font-playfair mb-2">Sanjay Biswakarma</h2>
+                <p class="text-xl md:text-2xl font-light tracking-widest gold-accent uppercase">
+                    <span class="lang-en">Professional Chef</span>
+                    <span class="lang-ne hidden">व्यावसायिक शेफ</span>
+                </p>
+                <p class="max-w-3xl mx-auto mt-6 text-gray-300">
+                    <span class="lang-en">A culinary artist with over 13 years of experience dedicated to crafting exceptional dining experiences and leading efficient, motivated kitchen teams.</span>
+                    <span class="lang-ne hidden">१३ वर्षभन्दा बढीको अनुभव भएको एक पाक कलाकार, जो असाधारण भोजन अनुभवहरू सिर्जना गर्न र कुशल, उत्प्रेरित भान्सा टोलीहरूको नेतृत्व गर्न समर्पित छन्।</span>
+                </p>
+                <a href="#contact" class="mt-8 inline-block gold-bg text-gray-900 font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:scale-105">
+                    <span class="lang-en">Get In Touch</span>
+                    <span class="lang-ne hidden">सम्पर्क गर्नुहोस्</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h3 class="fade-in-up text-4xl font-bold font-playfair mb-4">
+                    <span class="lang-en">About Me</span>
+                    <span class="lang-ne hidden">मेरो बारेमा</span>
+                </h3>
+                <div class="fade-in-up w-24 h-1 gold-bg mx-auto mb-12"></div>
+                <p class="fade-in-up max-w-4xl mx-auto text-lg leading-relaxed text-gray-300">
+                    <span class="lang-en">I am a creative and efficient chef with a passion for excellence and a proven track record spanning more than 13 years in the culinary industry. My expertise lies in running a smooth kitchen, strictly adhering to health and safety standards, and specializing in Main Course preparation. I pride myself on strong intrapersonal skills, which allow me to keep my kitchen crew constantly learning, highly motivated, and performing at their best.</span>
+                    <span class="lang-ne hidden">म एक रचनात्मक र कुशल शेफ हुँ जसलाई उत्कृष्टताको लागि जोश छ र पाक उद्योगमा १३ वर्षभन्दा बढीको प्रमाणित ट्र्याक रेकर्ड छ। मेरो विशेषज्ञता सहज भान्सा चलाउनु, स्वास्थ्य र सुरक्षा मापदण्डहरूको कडाईका साथ पालना गर्नु, र मुख्य पाठ्यक्रम तयारीमा विशेषज्ञतामा छ। म बलियो पारस्परिक कौशलमा गर्व गर्छु, जसले मलाई मेरो भान्सा टोलीलाई निरन्तर सिक्ने, उच्च उत्प्रेरित र उत्कृष्ट प्रदर्शन गर्न मद्दत गर्दछ।</span>
+                </p>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container mx-auto">
+                <h3 class="text-4xl font-bold font-playfair text-center mb-4 fade-in-up">
+                    <span class="lang-en">Our Services</span>
+                    <span class="lang-ne hidden">हाम्रा सेवाहरू</span>
+                </h3>
+                <div class="w-24 h-1 gold-bg mx-auto mb-12 fade-in-up"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in-up">
+                    <!-- Service 1: Wedding -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span class="lang-en">Wedding Catering</span>
+                            <span class="lang-ne hidden">विवाह क्याटरिङ</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">
+                            <span class="lang-en">Exquisite menus tailored for your special day, ensuring a memorable culinary experience.</span>
+                            <span class="lang-ne hidden">तपाईंको विशेष दिनको लागि तयार पारिएको उत्कृष्ट मेनुहरू, एक अविस्मरणीय पाक अनुभव सुनिश्चित गर्दै।</span>
+                        </p>
+                    </div>
+                    <!-- Service 2: Memorial -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                         <svg class="w-16 h-16 mx-auto mb-4 text-gold-accent" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a.5.5 0 0 0-1 0V3a.5.5 0 0 0 1 0V2.5zM12 5.5a.5.5 0 0 0-1 0V6a.5.5 0 0 0 1 0V5.5zM12 8.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 1 0V8.5z"/><path d="M5 11h14v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V11zM3 9h18v2H3V9z"/></svg>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span class="lang-en">Memorial Services</span>
+                            <span class="lang-ne hidden">पुण्यतिथि सेवाहरू</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">
+                            <span class="lang-en">Respectful and discreet catering for solemn occasions and remembrance gatherings.</span>
+                            <span class="lang-ne hidden">गम्भीर अवसरहरू र सम्झना जमघटहरूको लागि सम्मानजनक र विवेकी क्याटरिङ।</span>
+                        </p>
+                    </div>
+                    <!-- Service 3: Parties -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span class="lang-en">Corporate & Private Parties</span>
+                            <span class="lang-ne hidden">कर्पोरेट र निजी पार्टीहरू</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">
+                            <span class="lang-en">Impress your guests with professional culinary creations for birthdays, and corporate events.</span>
+                            <span class="lang-ne hidden">जन्मदिन, र कर्पोरेट कार्यक्रमहरूको लागि व्यावसायिक पाक सिर्जनाहरूको साथ आफ्ना अतिथिहरूलाई प्रभावित गर्नुहोस्।</span>
+                        </p>
+                    </div>
+                    <!-- Service 4: Small Gatherings -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.001 3.001 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h4 class="text-xl font-bold mb-2">
+                            <span class="lang-en">Small Gatherings</span>
+                            <span class="lang-ne hidden">साना जमघटहरू</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">
+                            <span class="lang-en">Gourmet experiences for intimate events, family dinners, and exclusive parties.</span>
+                            <span class="lang-ne hidden">आत्मीय कार्यक्रमहरू, पारिवारिक भोजन, र विशेष पार्टीहरूको लागि गउरमेन्ट अनुभवहरू।</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section bg-gray-900">
+            <div class="container mx-auto">
+                <h3 class="text-4xl font-bold font-playfair text-center mb-4 fade-in-up">
+                     <span class="lang-en">Work Experience</span>
+                    <span class="lang-ne hidden">कार्य अनुभव</span>
+                </h3>
+                <div class="w-24 h-1 gold-bg mx-auto mb-12 fade-in-up"></div>
+                <div class="relative max-w-5xl mx-auto">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700 hidden md:block"></div>
+
+                    <!-- Experience Items -->
+                    <div class="space-y-12 md:space-y-0">
+                        <!-- Item 1 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-start fade-in-up">
+                            <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                                <p class="font-bold text-lg gold-accent">
+                                    <span class="lang-en">Catering Manager</span>
+                                    <span class="lang-ne hidden">क्याटरिङ प्रबन्धक</span>
+                                </p>
+                                <p class="text-gray-400">Krishna Catering (Sikkim)</p>
+                                <p class="text-sm text-gray-500">2021 - Present</p>
+                            </div>
+                            <div class="relative md:pl-8">
+                                <div class="absolute left-1/2 -top-1.5 md:top-1.5 transform -translate-x-1/2 w-4 h-4 bg-gold-accent rounded-full border-4 border-gray-900"></div>
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                                    <ul class="list-disc list-inside lang-en">
+                                        <li>Managed and directed catering teams, ensuring clear responsibility delegation.</li>
+                                        <li>Handled cost estimation, budgeting, and financial oversight for catering events.</li>
+                                        <li>Expertly managed rush hour scenarios and controlled food quality for large-scale production.</li>
+                                        <li>Implemented strategies to minimize food wastage and trained staff for high-pressure environments.</li>
+                                    </ul>
+                                    <ul class="list-disc list-inside lang-ne hidden">
+                                        <li>क्याटरिङ टोलीहरूको व्यवस्थापन र निर्देशन, स्पष्ट जिम्मेवारी प्रत्यायोजन सुनिश्चित गर्दै।</li>
+                                        <li>क्याटरिङ कार्यक्रमहरूको लागि लागत अनुमान, बजेट, र वित्तीय निरीक्षण ह्यान्डल गरियो।</li>
+                                        <li>व्यस्त समयको परिदृश्यहरू कुशलतापूर्वक व्यवस्थित गरियो र ठूलो मात्रामा उत्पादनको लागि खाद्य गुणस्तर नियन्त्रण गरियो।</li>
+                                        <li>खानाको बर्बादीलाई न्यूनीकरण गर्न रणनीतिहरू लागू गरियो र उच्च-दबाब वातावरणको लागि कर्मचारीहरूलाई प्रशिक्षित गरियो।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-start fade-in-up">
+                            <div class="md:text-left md:pl-8 md:col-start-2 mb-4 md:mb-0">
+                                <p class="font-bold text-lg gold-accent">
+                                    <span class="lang-en">Chef-De-Partie</span>
+                                    <span class="lang-ne hidden">शेफ-डी-पार्टी</span>
+                                </p>
+                                <p class="text-gray-400">IBIS Delhi Aerocity</p>
+                                <p class="text-sm text-gray-500">2010 - 2019</p>
+                            </div>
+                            <div class="relative md:pr-8 md:text-right md:row-start-1">
+                                <div class="absolute left-1/2 md:right-0 top-1.5 transform -translate-x-1/2 md:translate-x-1/2 w-4 h-4 bg-gold-accent rounded-full border-4 border-gray-900"></div>
+                                 <div class="bg-gray-800 p-6 rounded-lg shadow-md text-left md:text-right">
+                                    <ul class="list-disc list-inside lang-en">
+                                        <li>Managed daily kitchen operations for a 200-cover restaurant and large banquet facilities.</li>
+                                        <li>Oversaw and mentored a team of 15 cooks and stewards.</li>
+                                        <li>Trained new staff on techniques, presentation, and recipe execution.</li>
+                                        <li>Served as Shift In-Charge, ensuring seamless service during peak seasons.</li>
+                                    </ul>
+                                    <ul class="list-disc list-inside lang-ne hidden">
+                                        <li>२०० कभरको रेस्टुरेन्ट र ठूला बैंक्वेट सुविधाहरूको लागि दैनिक भान्सा सञ्चालनहरू व्यवस्थित गरियो।</li>
+                                        <li>१५ कुक र स्टुअर्डहरूको टोलीको निरीक्षण र सल्लाह दिइयो।</li>
+                                        <li>नयाँ कर्मचारीहरूलाई प्रविधि, प्रस्तुति, र रेसिपी कार्यान्वयनमा प्रशिक्षित गरियो।</li>
+                                        <li>सिफ्ट इन्चार्जको रूपमा सेवा गरियो, व्यस्त मौसमहरूमा निर्बाध सेवा सुनिश्चित गर्दै।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-start fade-in-up">
+                            <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                                <p class="font-bold text-lg gold-accent">
+                                    <span class="lang-en">Commis Chef</span>
+                                    <span class="lang-ne hidden">कमिस शेफ</span>
+                                </p>
+                                <p class="text-gray-400">IBIS hotel Gurgaon</p>
+                                <p class="text-sm text-gray-500">2008 - 2010</p>
+                            </div>
+                            <div class="relative md:pl-8">
+                                <div class="absolute left-1/2 -top-1.5 md:top-1.5 transform -translate-x-1/2 w-4 h-4 bg-gold-accent rounded-full border-4 border-gray-900"></div>
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                                    <ul class="list-disc list-inside lang-en">
+                                        <li>Specialized in Continental cuisine and Butchery.</li>
+                                        <li>Assisted with inventory management and stock control.</li>
+                                    </ul>
+                                     <ul class="list-disc list-inside lang-ne hidden">
+                                        <li>कन्टिनेन्टल खाना र बुचरीमा विशेषज्ञता।</li>
+                                        <li>इन्भेन्टरी व्यवस्थापन र स्टक नियन्त्रणमा सहयोग गरियो।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!-- Item 4 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-start fade-in-up">
+                            <div class="md:text-left md:pl-8 md:col-start-2 mb-4 md:mb-0">
+                                <p class="font-bold text-lg gold-accent">
+                                    <span class="lang-en">Commis Chef (Training)</span>
+                                    <span class="lang-ne hidden">कमिस शेफ (प्रशिक्षण)</span>
+                                </p>
+                                <p class="text-gray-400">Casa Del sol Bangalore</p>
+                                <p class="text-sm text-gray-500">2007 - 2008</p>
+                            </div>
+                            <div class="relative md:pr-8 md:text-right md:row-start-1">
+                                <div class="absolute left-1/2 md:right-0 top-1.5 transform -translate-x-1/2 md:translate-x-1/2 w-4 h-4 bg-gold-accent rounded-full border-4 border-gray-900"></div>
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-md text-left md:text-right">
+                                    <ul class="list-disc list-inside lang-en">
+                                        <li>Gained foundational experience in station management and quality control.</li>
+                                        <li>Completed comprehensive training in Continental cuisine and Butchery.</li>
+                                    </ul>
+                                    <ul class="list-disc list-inside lang-ne hidden">
+                                        <li>स्टेसन व्यवस्थापन र गुणस्तर नियन्त्रणमा आधारभूत अनुभव प्राप्त गरियो।</li>
+                                        <li>कन्टिनेन्टल खाना र बुचरीमा विस्तृत प्रशिक्षण पूरा गरियो।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container mx-auto text-center">
+                 <h3 class="text-4xl font-bold font-playfair text-center mb-4 fade-in-up">
+                     <span class="lang-en">Core Skills</span>
+                    <span class="lang-ne hidden">मुख्य सीपहरू</span>
+                 </h3>
+                <div class="w-24 h-1 gold-bg mx-auto mb-12 fade-in-up"></div>
+                <div class="fade-in-up flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Sautéing</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Braising</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Roasting</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Sauce Making</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Knife Skills & Carving</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Creative Plating</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Inventory Management</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Team Leadership</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Adaptability Under Pressure</span>
+                    <span class="bg-gray-800 border border-gray-700 text-gold-accent font-medium py-2 px-5 rounded-full">Staff Training</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section bg-gray-900">
+            <div class="container mx-auto">
+                <h3 class="text-4xl font-bold font-playfair text-center mb-4 fade-in-up">
+                    <span class="lang-en">Local Delicacies</span>
+                    <span class="lang-ne hidden">स्थानीय परिकारहरू</span>
+                </h3>
+                <div class="w-24 h-1 gold-bg mx-auto mb-12 fade-in-up"></div>
+                <div class="fade-in-up space-y-16">
+                    <!-- Vegetarian Section -->
+                    <div>
+                        <h4 class="text-3xl font-bold font-playfair text-center mb-8 text-gold-accent">
+                            <span class="lang-en">Vegetarian Delights</span>
+                            <span class="lang-ne hidden">शाकाहारी परिकारहरू</span>
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=60" alt="Veg Momos" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Veg Momos</span><span class="lang-ne hidden">तरकारी मोमो</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=60" alt="Veg Chowmein" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Veg Chowmein</span><span class="lang-ne hidden">तरकारी चाउमिन</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1594282433912-2e5454655589?auto=format&fit=crop&w=800&q=60" alt="Fried Bitter Gourd" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Fried Bitter Gourd</span><span class="lang-ne hidden">तारेको करेला</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1623961913921-9e8f47530438?auto=format&fit=crop&w=800&q=60" alt="Rasmalai" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Rasmalai</span><span class="lang-ne hidden">रसमलाई</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Non-Vegetarian Section -->
+                    <div>
+                        <h4 class="text-3xl font-bold font-playfair text-center mb-8 text-gold-accent">
+                            <span class="lang-en">Non-Vegetarian Specials</span>
+                            <span class="lang-ne hidden">मांसाहारी परिकारहरू</span>
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                           <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1626776878426-0b3323a63908?auto=format&fit=crop&w=800&q=60" alt="Chicken Momos" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Chicken Momos</span><span class="lang-ne hidden">चिकेन मोमो</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1604329233314-bce11025a4f6?auto=format&fit=crop&w=800&q=60" alt="Pork with Rice" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Local Pork Curry</span><span class="lang-ne hidden">स्थानीय पोर्क तरकारी</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1603133872878-624634384d28?auto=format&fit=crop&w=800&q=60" alt="Chicken with Rice" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Local Chicken Curry</span><span class="lang-ne hidden">स्थानीय कुखुराको तरकारी</span></p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60" alt="Dishes on Demand" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <p class="text-white text-lg font-bold text-center px-2"><span class="lang-en">Dishes on Demand</span><span class="lang-ne hidden">माग अनुसारका परिकारहरू</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer/Contact Section -->
+    <footer id="contact" class="bg-gray-800 pt-16 pb-8">
+        <div class="container mx-auto text-center px-6">
+            <h3 class="text-4xl font-bold font-playfair mb-4">
+                <span class="lang-en">Contact Me</span>
+                <span class="lang-ne hidden">मसँग सम्पर्क गर्नुहोस्</span>
+            </h3>
+            <div class="w-24 h-1 gold-bg mx-auto mb-8"></div>
+            <p class="max-w-2xl mx-auto text-gray-400 mb-10">
+                <span class="lang-en">I'm always open to discussing new opportunities, creative projects, or collaborations. Please feel free to get in touch.</span>
+                <span class="lang-ne hidden">म सधैं नयाँ अवसरहरू, रचनात्मक परियोजनाहरू, वा सहकार्यहरूबारे छलफल गर्न खुला छु। कृपया सम्पर्क गर्न नहिचकिचाउनुहोस्।</span>
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                <a href="tel:+918972080697" class="flex items-center space-x-3 text-lg hover:text-gold-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91 89720 80697</span>
+                </a>
+                <a href="mailto:sanjaybiswa9@gmail.com" class="flex items-center space-x-3 text-lg hover:text-gold-accent transition duration-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>sanjaybiswa9@gmail.com</span>
+                </a>
+                 <div class="flex items-center space-x-3 text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Darjeeling, India</span>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-6">
+                <p class="text-gray-500 text-sm">&copy; 2025 Sanjay Biswakarma. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // State for language
+        let currentLanguage = 'en';
+
+        // Elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const langToggle = document.getElementById('lang-toggle');
+        const langToggleMobile = document.getElementById('lang-toggle-mobile');
+        const langToggleDot = document.getElementById('lang-toggle-dot');
+        const langToggleDotMobile = document.getElementById('lang-toggle-dot-mobile');
+        
+        const enElements = document.querySelectorAll('.lang-en');
+        const neElements = document.querySelectorAll('.lang-ne');
+        
+        const enToggleText = langToggle.querySelector('span:first-child');
+        const neToggleText = langToggle.querySelector('span:last-child');
+        const enToggleTextMobile = langToggleMobile.querySelector('span:first-child');
+        const neToggleTextMobile = langToggleMobile.querySelector('span:last-child');
+
+
+        // Mobile Menu Toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Language Toggle Function
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                currentLanguage = 'en';
+                document.documentElement.lang = 'en';
+                enElements.forEach(el => el.classList.remove('hidden'));
+                neElements.forEach(el => el.classList.add('hidden'));
+                langToggleDot.style.transform = 'translateX(0px)';
+                langToggleDotMobile.style.transform = 'translateX(0px)';
+                enToggleText.classList.remove('text-gray-500');
+                neToggleText.classList.add('text-gray-500');
+                enToggleTextMobile.classList.remove('text-gray-500');
+                neToggleTextMobile.classList.add('text-gray-500');
+
+            } else if (lang === 'ne') {
+                currentLanguage = 'ne';
+                document.documentElement.lang = 'ne';
+                enElements.forEach(el => el.classList.add('hidden'));
+                neElements.forEach(el => el.classList.remove('hidden'));
+                langToggleDot.style.transform = 'translateX(20px)';
+                langToggleDotMobile.style.transform = 'translateX(20px)';
+                enToggleText.classList.add('text-gray-500');
+                neToggleText.classList.remove('text-gray-500');
+                enToggleTextMobile.classList.add('text-gray-500');
+                neToggleTextMobile.classList.remove('text-gray-500');
+            }
+        }
+        
+        langToggle.addEventListener('click', () => {
+            setLanguage(currentLanguage === 'en' ? 'ne' : 'en');
+        });
+        
+        langToggleMobile.addEventListener('click', () => {
+            setLanguage(currentLanguage === 'en' ? 'ne' : 'en');
+        });
+        
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in-up');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
+
